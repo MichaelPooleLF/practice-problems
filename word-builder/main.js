@@ -1,7 +1,7 @@
 function wordBuilder(string) {
   var returnArray = [];
   var position = string.length;
-  for(var i = position; i >= 0; i--) {
+  for(var i = position; i > 0; i--) {
     returnArray[i] = string.substring(0, i);
   }
   return returnArray
