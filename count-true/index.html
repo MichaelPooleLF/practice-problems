@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function countTrue(array) {
+      let numTrue = 0;
+      array.forEach((element) => {
+        if (element) {
+          numTrue++;
+        }
+      })
+      return numTrue;
+    }
+
+    console.log(countTrue([true, false, false, true, false]));
+    console.log(countTrue([false, false, false, false]));
+    console.log(countTrue([]));
+  </script>
+</body>
+</html>
