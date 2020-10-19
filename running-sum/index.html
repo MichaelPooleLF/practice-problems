@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Running Sum</title>
+</head>
+<body>
+  <script>
+    /*
+    * Problem: Given an array "nums", return the running sum of "nums"
+    * running sum of an array is defined as runningSum[i] = sum(nums[0] ...nums[i])
+    * @param {number[]} nums
+    * @return {number[]}
+    */
+      var runningSum = function (nums) {
+        let lastTotal = 0;
+        const returnArray = nums.map(number => {
+          lastTotal += number;
+          return lastTotal;
+        });
+        return returnArray;
+      };
+  </script>
+</body>
+</html>
