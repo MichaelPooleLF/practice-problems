@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kids With the Greatest Number of Candies</title>
+</head>
+<body>
+  <script>
+    /*
+    * Given the array "candies" and the integer "extraCandies", where candies[i]
+    * represents the number of candies that the ith kid has, return an array of
+    * boolean values. If a kid can have the greatest number of candies by adding
+    * the number of extra candies to his current candy total, show true.
+    *
+    * @param {number[]} candies
+    * @param {number} extraCandies
+    * @return {boolean[]}
+    */
+    const kidsWithCandies = function (candies, extraCandies) {
+      let max = -Infinity;
+      const candiesWithExtra = [];
+      const returnArray = [];
+      for (let i = 0; i < candies.length; i++) {
+        if (max < candies[i]) {
+          max = candies[i];
+        }
+        candiesWithExtra[i] = candies[i] + extraCandies;
+      }
+      for (let i = 0; i < candies.length; i++) {
+        if (candiesWithExtra[i] >= max) {
+          returnArray[i] = true;
+        } else {
+          returnArray[i] = false;
+        }
+      }
+      return returnArray;
+    }
+  </script>
+</body>
+</html>
