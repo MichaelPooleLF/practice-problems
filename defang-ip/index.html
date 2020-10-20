@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Defang an IP Address</title>
+</head>
+<body>
+  <script>
+    /*
+    * Given a valid (IPv4) IP address, return a defanged version of that IP address.
+    * a "defanged" IP address replaces every period "." with "[.]"
+    *
+    * @param {string} address
+    * @return {string}
+    */
+    var defangIPaddr = function (address) {
+      const splitAddress = address.split(".");
+      const defanged = splitAddress.join("[.]");
+      return defanged;
+    };
+  </script>
+</body>
+</html>
