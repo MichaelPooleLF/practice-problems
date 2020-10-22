@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shuffle String</title>
+</head>
+<body>
+  <script>
+    /*
+    * Given a string "s" and an integer array "indices" of the same length, the
+    * string "s" will be shuffled such that the character at the ith position
+    * moves to indices[i] in the shuffled string. Return the shuffled string.
+    *
+    * @param {string} s
+    * @param {number[]} indices
+    * @return {string}
+    */
+    var restoreString = function (s, indices) {
+      const stringArray = [];
+      for (let i = 0; i < indices.length; i++) {
+        stringArray[indices[i]] = s[i];
+      }
+      return stringArray.join("");
+    };
+  </script>
+</body>
+</html>
