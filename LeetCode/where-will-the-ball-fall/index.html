@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where will the ball fall</title>
+</head>
+<body>
+  <script>
+    /**
+   * @param {number[][]} grid
+   * @return {number[]}
+   *
+   *  1 represents a diagonal \
+   * -1 represents a diagonal /
+   *
+   * drop balls at the top of each column. balls can get stuck or fall out the bottom
+   * balls can get stuck in \/ or if boards redirect balls into sides of walls
+   *
+   * return an array of size n where answer[i] is the column that the ball falls
+   * out of at the bottom after dropping the ball from the ith column, or
+   * -1 if the ball gets stuck
+   *
+   * @Input ex: grid = [[1,1,1,-1,-1],[1,1,1,-1,-1],[-1,-1,-1,1,1],[1,1,1,1,-1],[-1,-1,-1,-1,-1]]
+   * @Output ex: [1,-1,-1,-1,-1]
+   *
+   * @Constraints:
+   * m === grid.length
+   * n === grid[i].length
+   * 1 <= m, n <= 100
+   * grid[i][j] is 1 or -1
+   *
+   */
+      var findBall = function (grid) {
+        const returnArr = [];
+        const bottom = grid.length;
+        const width = grid[0].length;
+
+        for (let i = 0; i < width; i++) {
+          const value = grid[0][i];
+
+          function ballDrops(val, row, col) {
+            const newCol = col + val;
+            const newRow = row + 1;
+            const nextVal = grid[row][newCol];
+            if (!nextVal || nextVal !== val) {
+              returnArr[i] = -1;
+              return;
+            } else if (newRow === bottom) {
+              returnArr[i] = newCol;
+              return;
+            } else {
+              const newDiag = grid[newRow][newCol];
+              ballDrops(newDiag, newRow, newCol);
+            }
+          }
+
+          ballDrops(value, 0, i);
+        }
+
+        return returnArr;
+      };
+  </script>
+</body>
+</html>
