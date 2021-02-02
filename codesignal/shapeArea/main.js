@@ -18,5 +18,6 @@ function shapeArea(n) {
   return (n * n) + ((n - 1)*(n - 1));
 }
 
+module.exports = shapeArea;
     //array of example inputs  [1,  2,  3,  4,  5 ]
     //array of example outputs [1,  5,  13, 25, 41]
